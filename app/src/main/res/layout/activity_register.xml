@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#F5F7FA"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đăng ký"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000000" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Nhập email"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/editbox_background"
+        android:padding="10dp" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Nhập mật khẩu"
+        android:inputType="textPassword"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/editbox_background"
+        android:padding="10dp" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Xác nhận mật khẩu"
+        android:inputType="textPassword"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/editbox_background"
+        android:padding="10dp" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Đăng ký"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#1E90FF"
+        android:layout_marginTop="16dp" />
+</LinearLayout>

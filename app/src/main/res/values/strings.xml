@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">FMCarer</string>
+    <string-array name="post_levels">
+        <item>Cao</item>
+        <item>Trung bình</item>
+        <item>Thấp</item>
+    </string-array>
+    <string name="select_level">Chọn mức độ</string>
+    <string-array name="user_roles">
+        <item>Phụ huynh</item>
+        <item>Nhân viên</item>
+    </string-array>
+    <string name="select_role">Chọn vai trò</string>
 </resources>
