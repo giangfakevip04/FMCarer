@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "338611338007",
+    "project_id": "fmcarer-7115f",
+    "storage_bucket": "fmcarer-7115f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338611338007:android:634d806cfdd0905807d552",
+        "android_client_info": {
+          "package_name": "com.example.fmcarer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAjA8AIpndmvzWR91rsP66C64bIABZsjY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

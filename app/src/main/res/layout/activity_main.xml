@@ -37,6 +37,7 @@
         android:background="#FFFFFF">
 
         <TextView
+            android:id="@+id/navChildren"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -45,6 +46,7 @@
             android:padding="8dp" />
 
         <TextView
+            android:id="@+id/navSchedule"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -53,6 +55,7 @@
             android:padding="8dp" />
 
         <TextView
+            android:id="@+id/navPosts"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -61,6 +64,7 @@
             android:padding="8dp" />
 
         <TextView
+            android:id="@+id/navPayment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -69,6 +73,7 @@
             android:padding="8dp" />
 
         <TextView
+            android:id="@+id/navComplaint"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -98,6 +103,7 @@
                 android:layout_marginBottom="8dp" />
 
             <LinearLayout
+                android:id="@+id/childItem"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="#FFFFFF"
@@ -112,6 +118,7 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/addChildButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Thêm mới"
