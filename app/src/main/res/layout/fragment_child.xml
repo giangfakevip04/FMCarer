@@ -1,38 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#F5F7FA"
-    android:padding="16dp">
+    android:background="#FFFFFF">
 
-    <!-- Header -->
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/textChildTitle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quản lý tài khoản phụ"
+        android:text="Danh sách trẻ"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="#1E90FF"
-        android:gravity="center"
-        android:layout_marginBottom="16dp" />
+        android:layout_margin="16dp" />
 
-    <!-- Nút thêm -->
-    <Button
-        android:id="@+id/btn_add_sub_account"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerChildren"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textChildTitle"
+        android:padding="16dp"
+        android:clipToPadding="false"
+        android:layout_above="@id/fabAddChild" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddChild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="100dp"
+        android:src="@drawable/add"
+        android:tint="@android:color/white"
+        android:backgroundTint="#00B89F" />
+
+    <include
+        layout="@layout/view_bottom_nav"
+        android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Thêm tài khoản phụ"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="#1E90FF"
-        android:layout_marginBottom="12dp" />
-
-    <!-- Danh sách tài khoản phụ -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_sub_accounts"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:paddingBottom="8dp"
-        android:clipToPadding="false"/>
-</LinearLayout>
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>
