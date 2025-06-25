@@ -1,0 +1,38 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="Nhật ký chăm sóc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/inputLogContent"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:hint="Ghi lại nội dung chăm sóc..."
+            android:gravity="top"
+            android:background="@drawable/bg_edittext_outline"
+            android:padding="12dp"
+            android:inputType="textMultiLine" />
+
+        <Button
+            android:id="@+id/btnSubmitLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lưu nhật ký"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#00B89F"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+</ScrollView>

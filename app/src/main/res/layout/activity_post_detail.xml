@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Người đăng -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_user"
+                android:background="@drawable/bg_circle"
+                android:layout_marginEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/textAuthorDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nguyễn Thảo"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/textTimeDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25/06/2025 • 14:30"
+                    android:textSize="12sp"
+                    android:textColor="#888" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Nội dung bài viết -->
+        <TextView
+            android:id="@+id/textContentDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nội dung đầy đủ bài viết sẽ hiển thị ở đây, có thể chứa nhiều dòng, hướng dẫn, chia sẻ chăm sóc bé..."
+            android:textSize="15sp"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Hình ảnh kèm theo nếu có -->
+        <ImageView
+            android:id="@+id/imageAttachment"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/sample_post"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="24dp"
+            android:visibility="gone" />
+
+        <!-- Like / comment -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/like"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/textLikes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12 lượt thích"
+                android:textSize="13sp"
+                android:layout_marginEnd="24dp" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_comment"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/textComments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 bình luận"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

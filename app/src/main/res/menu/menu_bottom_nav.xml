@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_visits"
+        android:icon="@drawable/calendar"
+        android:title="Lịch chăm" />
+
+    <item
+        android:id="@+id/nav_children"
+        android:icon="@drawable/satisfied_filled"
+        android:title="Trẻ" />
+
+    <item
+        android:id="@+id/nav_logs"
+        android:icon="@drawable/note"
+        android:title="Nhật ký" />
+
+    <item
+        android:id="@+id/nav_notifications"
+        android:icon="@drawable/notification"
+        android:title="Thông báo" />
+</menu>

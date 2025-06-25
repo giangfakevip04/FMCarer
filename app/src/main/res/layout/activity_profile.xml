@@ -1,82 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#F5F7FA"
-    android:padding="16dp">
+    android:padding="24dp"
+    android:background="#FFFFFF">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="#1E90FF"
-        android:gravity="center_vertical"
-        android:padding="16dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="FMCarer"
-            android:textSize="20sp"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="#FFFFFF"
-        android:padding="16dp"
-        android:layout_marginTop="16dp">
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_user"
+            android:background="@drawable/bg_circle"
+            android:layout_marginBottom="16dp" />
 
         <TextView
+            android:id="@+id/textProfileEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Thông tin cá nhân"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:text="admin@fmcarer.vn"
+            android:textStyle="bold"
+            android:textSize="16sp" />
 
-        <EditText
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/textProfileRole"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="User ID"
-            android:inputType="text"
-            android:layout_marginTop="8dp"
-            android:background="@android:drawable/editbox_background"
-            android:padding="10dp" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:layout_marginTop="8dp"
-            android:background="@android:drawable/editbox_background"
-            android:padding="10dp" />
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/user_roles"
-            android:prompt="@string/select_role"
-            android:layout_marginTop="8dp" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Trạng thái"
-            android:inputType="text"
-            android:layout_marginTop="8dp"
-            android:background="@android:drawable/editbox_background"
-            android:padding="10dp" />
+            android:text="Tài khoản chính"
+            android:textColor="#666"
+            android:textSize="13sp"
+            android:layout_marginBottom="24dp" />
 
         <Button
+            android:id="@+id/btnEditProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Lưu thay đổi"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#1E90FF"
-            android:layout_marginTop="16dp" />
+            android:text="Chỉnh sửa thông tin"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#00B89F"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnManageSubusers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quản lý tài khoản phụ"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#333333" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đăng xuất"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="#D32F2F"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
-</LinearLayout>
+</ScrollView>

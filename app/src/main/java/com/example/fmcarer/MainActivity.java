@@ -1,53 +1,58 @@
 package com.example.fmcarer;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.fmcarer.activity.LoginActivity;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.FirebaseAuth;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+
+import com.example.fmcarer.fragment.ChildFragment;
+import com.example.fmcarer.fragment.DashboardFragment;
+import com.example.fmcarer.fragment.LogFragment;
+import com.example.fmcarer.fragment.NotificationFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
-    private FirebaseAuth mAuth;
+
+    FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Kiểm tra khởi tạo Firebase
-        if (FirebaseApp.getApps(this).isEmpty()) {
-            android.util.Log.e(TAG, "Firebase không khởi tạo! Kiểm tra google-services.json.");
-        } else {
-            android.util.Log.d(TAG, "Firebase khởi tạo thành công.");
-        }
+        fragmentManager = getSupportFragmentManager();
 
-        mAuth = FirebaseAuth.getInstance();
+        // Mặc định là DashboardFragment
+        loadFragment(new DashboardFragment());
 
-//        Button logoutButton = findViewById(R.id.logoutButton); // Chưa có trong layout hiện tại
-        Button addChildButton = findViewById(R.id.addChildButton);
+        BottomNavigationView bottomNav = findViewById(R.id.bottomNav);
+        bottomNav.setOnItemSelectedListener(item -> {
+            Fragment fragment = null;
+            int id = item.getItemId();
 
-//        logoutButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mAuth.signOut();
-//                android.util.Log.d(TAG, "Đăng xuất thành công");
-//                startActivity(new Intent(MainActivity.this, LoginActivity.class));
-//                finish();
-//            }
-//        });
-
-        addChildButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                android.util.Log.d(TAG, "Nhấn nút Thêm mới");
-                // Thêm logic cho việc thêm trẻ em (ví dụ: chuyển sang Activity khác)
-                // startActivity(new Intent(MainActivity.this, AddChildActivity.class));
+            if (id == R.id.nav_visits) {
+                fragment = new DashboardFragment();
+            } else if (id == R.id.nav_children) {
+                fragment = new ChildFragment();
+            } else if (id == R.id.nav_logs) {
+                fragment = new LogFragment();
+            } else if (id == R.id.nav_notifications) {
+                fragment = new NotificationFragment();
             }
+
+            if (fragment != null) {
+                loadFragment(fragment);
+                return true;
+            }
+            return false;
         });
     }
+
+    private void loadFragment(Fragment fragment) {
+        fragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, fragment)
+                .commit();
+    }
 }
+
