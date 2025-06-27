@@ -8,7 +8,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottomNav"
         android:padding="16dp">
 
         <LinearLayout
@@ -58,47 +57,27 @@
                 android:scrollbars="none">
 
                 <LinearLayout
+                    android:id="@+id/weeklyCalendarContainer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:orientation="horizontal">
 
-                    <!-- Lặp lại mỗi ngày -->
-                    <!-- Dưới đây là 1 mẫu item -->
-                    <LinearLayout
-                        android:layout_width="56dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="4dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="T2"
-                            android:textColor="#888"
-                            android:textSize="12sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="24"
-                            android:textColor="#000"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
+                    <!-- Các ngày sẽ được thêm động -->
                 </LinearLayout>
             </HorizontalScrollView>
 
             <!-- Cảnh báo -->
             <LinearLayout
+                android:id="@+id/warningContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 android:background="#FFFBE6"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="12dp">
+                android:padding="12dp"
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="24dp"
@@ -108,6 +87,7 @@
                     app:tint="#FFC107" />
 
                 <TextView
+                    android:id="@+id/warningText"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -116,8 +96,9 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- Lịch chăm sóc hôm nay -->
+            <!-- Tiêu đề lịch chăm sóc -->
             <TextView
+                android:id="@+id/titleSchedule"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -125,60 +106,77 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
+            <!-- RecyclerView cho lịch chăm sóc -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerSchedules"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:nestedScrollingEnabled="false" />
+
+            <!-- Thống kê nhanh -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:background="#F7F7F7"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="12dp">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginEnd="12dp"
-                    android:background="@drawable/bg_circle"
-                    android:contentDescription="Trẻ"
-                    android:src="@drawable/satisfied_filled" />
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:background="#F0F9FF"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_marginEnd="8dp">
 
                     <TextView
+                        android:id="@+id/totalSchedulesToday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Bé Ngọc Lan"
-                        android:textSize="14sp"
+                        android:text="3"
+                        android:textColor="#0284C7"
+                        android:textSize="24sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="8:00 - 10:00 (Ăn sáng)"
-                        android:textColor="#666"
+                        android:text="Lịch hôm nay"
+                        android:textColor="#64748B"
                         android:textSize="12sp" />
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="2 giờ"
-                    android:textColor="#999"
-                    android:textSize="12sp" />
+                    android:layout_weight="1"
+                    android:background="#F0FDF4"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:id="@+id/completedSchedulesToday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:textColor="#16A34A"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Đã hoàn thành"
+                        android:textColor="#64748B"
+                        android:textSize="12sp" />
+                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
 
-    <!-- Bottom Navigation -->
-    <include
-        android:id="@+id/bottomNav"
-        layout="@layout/view_bottom_nav"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
 </RelativeLayout>

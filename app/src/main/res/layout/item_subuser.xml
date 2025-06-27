@@ -33,10 +33,4 @@
         android:tint="@android:color/white"
         android:backgroundTint="#00B89F" />
 
-    <include
-        layout="@layout/view_bottom_nav"
-        android:id="@+id/bottomNav"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
 </RelativeLayout>

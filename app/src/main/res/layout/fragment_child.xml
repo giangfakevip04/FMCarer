@@ -7,7 +7,7 @@
         android:id="@+id/textChildTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Danh sách trẻ"
+        android:text="Quản lý trẻ"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_margin="16dp" />
@@ -18,8 +18,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/textChildTitle"
         android:padding="16dp"
-        android:clipToPadding="false"
-        android:layout_above="@id/fabAddChild" />
+        android:clipToPadding="false" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddChild"
@@ -27,16 +26,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
         android:src="@drawable/add"
         android:tint="@android:color/white"
         android:backgroundTint="#00B89F" />
-
-    <include
-        layout="@layout/view_bottom_nav"
-        android:id="@+id/bottomNav"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
 </RelativeLayout>

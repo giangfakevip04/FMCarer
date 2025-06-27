@@ -16,6 +16,11 @@
         android:title="Nhật ký" />
 
     <item
+        android:id="@+id/nav_posts"
+        android:icon="@drawable/post"
+        android:title="Bài viết" />
+
+    <item
         android:id="@+id/nav_notifications"
         android:icon="@drawable/notification"
         android:title="Thông báo" />

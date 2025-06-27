@@ -18,13 +18,5 @@
         android:layout_height="match_parent"
         android:layout_below="@id/textNotificationTitle"
         android:padding="16dp"
-        android:clipToPadding="false"
-        android:layout_above="@id/bottomNav" />
-
-    <include
-        layout="@layout/view_bottom_nav"
-        android:id="@+id/bottomNav"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
+        android:clipToPadding="false" />
 </RelativeLayout>

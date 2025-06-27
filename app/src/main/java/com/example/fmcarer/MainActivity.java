@@ -10,6 +10,7 @@ import com.example.fmcarer.fragment.ChildFragment;
 import com.example.fmcarer.fragment.DashboardFragment;
 import com.example.fmcarer.fragment.LogFragment;
 import com.example.fmcarer.fragment.NotificationFragment;
+import com.example.fmcarer.fragment.PostListFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         // Mặc định là DashboardFragment
         loadFragment(new DashboardFragment());
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottomNav);
+        BottomNavigationView bottomNav = findViewById(R.id.bottomNavigation);
         bottomNav.setOnItemSelectedListener(item -> {
             Fragment fragment = null;
             int id = item.getItemId();
@@ -37,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new ChildFragment();
             } else if (id == R.id.nav_logs) {
                 fragment = new LogFragment();
+            } else if (id == R.id.nav_posts) {
+                fragment = new PostListFragment();
             } else if (id == R.id.nav_notifications) {
                 fragment = new NotificationFragment();
             }
