@@ -1,66 +1,136 @@
 package com.example.fmcarer.model;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
+import com.google.gson.annotations.SerializedName;
 
 public class CareSchedule {
-    private String childName;
-    private String childAvatar;
-    private String startTime;
-    private String endTime;
-    private String activity;
-    private String duration;
-    private Date scheduleDate;
-    private boolean isCompleted;
+    @SerializedName("_id")
+    private String id;
 
-    // Constructor
-    public CareSchedule(String childName, String childAvatar, String startTime,
-                        String endTime, String activity, Date scheduleDate) {
-        this.childName = childName;
-        this.childAvatar = childAvatar;
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.activity = activity;
-        this.scheduleDate = scheduleDate;
-        this.isCompleted = false;
+    @SerializedName("user_id")
+    private String userId;
 
-        // Tính duration
-        this.duration = calculateDuration(startTime, endTime);
+    @SerializedName("child_id")
+    private Children child;
+
+    @SerializedName("type")
+    private String type;
+
+    @SerializedName("custom_type")
+    private String customType;
+
+    @SerializedName("note")
+    private String note;
+
+    @SerializedName("reminder_date")
+    private String reminderDate;
+
+    @SerializedName("reminder_time")
+    private String reminderTime;
+
+    @SerializedName("repeat")
+    private boolean repeat;
+
+    @SerializedName("repeat_type")
+    private String repeatType;
+
+    @SerializedName("is_completed")
+    private boolean completed;
+
+    // ✅ Getters and Setters
+
+    public String getId() {
+        return id;
     }
 
-    private String calculateDuration(String start, String end) {
-        try {
-            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
-            Date startDate = sdf.parse(start);
-            Date endDate = sdf.parse(end);
+    public void setId(String id) {
+        this.id = id;
+    }
 
-            long diffInMillis = endDate.getTime() - startDate.getTime();
-            long hours = diffInMillis / (1000 * 60 * 60);
-            long minutes = (diffInMillis % (1000 * 60 * 60)) / (1000 * 60);
+    public String getUserId() {
+        return userId != null ? userId : "";
+    }
 
-            if (hours > 0) {
-                return hours + " giờ" + (minutes > 0 ? " " + minutes + " phút" : "");
-            } else {
-                return minutes + " phút";
-            }
-        } catch (Exception e) {
-            return "N/A";
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public Children getChild() {
+        return child;
+    }
+
+    public void setChild(Children child) {
+        this.child = child;
+    }
+
+    public String getType() {
+        return type != null ? type : "";
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getCustomType() {
+        return customType != null ? customType : "";
+    }
+
+    public void setCustomType(String customType) {
+        this.customType = customType;
+    }
+
+    public String getNote() {
+        return note != null ? note : "";
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public String getReminderDate() {
+        return reminderDate != null ? reminderDate : "";
+    }
+
+    public void setReminderDate(String reminderDate) {
+        this.reminderDate = reminderDate;
+    }
+
+    public String getReminderTime() {
+        return reminderTime != null ? reminderTime : "";
+    }
+
+    public void setReminderTime(String reminderTime) {
+        this.reminderTime = reminderTime;
+    }
+
+    public boolean isRepeat() {
+        return repeat;
+    }
+
+    public void setRepeat(boolean repeat) {
+        this.repeat = repeat;
+    }
+
+    public String getRepeatType() {
+        return repeatType != null ? repeatType : "";
+    }
+
+    public void setRepeatType(String repeatType) {
+        this.repeatType = repeatType;
+    }
+
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
+
+    // ✅ Lấy loại hiển thị (type hoặc custom_type nếu type == other)
+    public String getDisplayType() {
+        if ("other".equalsIgnoreCase(type)) {
+            return customType != null && !customType.trim().isEmpty() ? customType : "Loại khác";
         }
-    }
-
-    // Getters and setters
-    public String getChildName() { return childName; }
-    public String getChildAvatar() { return childAvatar; }
-    public String getStartTime() { return startTime; }
-    public String getEndTime() { return endTime; }
-    public String getActivity() { return activity; }
-    public String getDuration() { return duration; }
-    public Date getScheduleDate() { return scheduleDate; }
-    public boolean isCompleted() { return isCompleted; }
-    public void setCompleted(boolean completed) { isCompleted = completed; }
-
-    public String getTimeRange() {
-        return startTime + " - " + endTime + " (" + activity + ")";
+        return type;
     }
 }
