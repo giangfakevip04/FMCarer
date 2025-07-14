@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <!-- Ô tạo bài viết -->
+    <LinearLayout
+        android:id="@+id/layoutCreatePost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog_rounded"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/imgAvatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/bg_circle_blue"
+            android:scaleType="centerCrop"
+            android:src="@drawable/taikhoan" />
+
+        <TextView
+            android:id="@+id/textViewCreatePost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_dialog_rounded"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="Bạn đang nghĩ gì?"
+            android:textColor="@color/gray"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <!-- Danh sách bài viết -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerCommunityPosts"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:nestedScrollingEnabled="true"
+        android:paddingBottom="12dp" />
+
+</LinearLayout>
