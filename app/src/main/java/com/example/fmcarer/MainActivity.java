@@ -1,61 +1,31 @@
 package com.example.fmcarer;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
-import com.example.fmcarer.fragment.ChildFragment;
-import com.example.fmcarer.fragment.DashboardFragment;
-import com.example.fmcarer.fragment.LogFragment;
-import com.example.fmcarer.fragment.NotificationFragment;
-import com.example.fmcarer.fragment.PostListFragment;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.example.fmcarer.view.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
-
-    FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        fragmentManager = getSupportFragmentManager();
-
-        // Mặc định là DashboardFragment
-        loadFragment(new DashboardFragment());
-
-        BottomNavigationView bottomNav = findViewById(R.id.bottomNavigation);
-        bottomNav.setOnItemSelectedListener(item -> {
-            Fragment fragment = null;
-            int id = item.getItemId();
-
-            if (id == R.id.nav_visits) {
-                fragment = new DashboardFragment();
-            } else if (id == R.id.nav_children) {
-                fragment = new ChildFragment();
-            } else if (id == R.id.nav_logs) {
-                fragment = new LogFragment();
-            } else if (id == R.id.nav_posts) {
-                fragment = new PostListFragment();
-            } else if (id == R.id.nav_notifications) {
-                fragment = new NotificationFragment();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
-
-            if (fragment != null) {
-                loadFragment(fragment);
-                return true;
-            }
-            return false;
-        });
+        }, 1500);
     }
 
-    private void loadFragment(Fragment fragment) {
-        fragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainer, fragment)
-                .commit();
-    }
 }
-
