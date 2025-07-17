@@ -3,73 +3,68 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/bg_dialog"
     android:orientation="vertical"
-    android:padding="24dp"
-    android:background="@drawable/bg_dialog_rounded">
+    android:padding="24dp">
 
-    <!-- Tiêu đề -->
     <TextView
         android:id="@+id/tvDialogTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Thêm/Chỉnh sửa trẻ"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
+        android:layout_marginBottom="16dp"
         android:gravity="center"
-        android:layout_marginBottom="16dp" />
+        android:text="Thêm/Chỉnh sửa trẻ"
+        android:textColor="@color/text_primary"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-    <!-- Avatar -->
     <ImageView
         android:id="@+id/imgChildAvatar"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
-        android:src="@drawable/taikhoan"
-        android:scaleType="centerCrop"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/bg_circle_blue"
         android:contentDescription="Ảnh đại diện"
-        android:layout_marginBottom="8dp" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/taikhoan" />
 
-    <!-- Nút chọn ảnh -->
     <TextView
         android:id="@+id/btnChangeAvatar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Chọn ảnh"
-        android:textColor="@color/black"
         android:layout_gravity="center_horizontal"
-        android:textSize="14sp"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:text="Chọn ảnh"
+        android:textColor="@color/text_primary"
+        android:textSize="14sp" />
 
-    <!-- Họ tên -->
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Họ và tên"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxBackgroundColor="@color/mau_item"
-        app:boxCornerRadiusTopStart="12dp"
-        app:boxCornerRadiusTopEnd="12dp"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="12dp"
         app:boxCornerRadiusBottomStart="12dp"
-        app:boxCornerRadiusBottomEnd="12dp">
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtChildName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="@color/text_primary" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Ngày sinh -->
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ngày sinh"
         android:layout_marginTop="16dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxBackgroundColor="@color/mau_item">
+        android:hint="Ngày sinh"
+        app:boxBackgroundColor="@color/white">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtChildDOB"
@@ -77,71 +72,70 @@
             android:layout_height="wrap_content"
             android:focusable="false"
             android:inputType="none"
-            android:textColor="@color/black" />
+            android:textColor="@color/text_primary" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Giới tính -->
     <RadioGroup
         android:id="@+id/rgGender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginTop="16dp"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/rbMale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nam"
-            android:textColor="@color/black" />
+            android:textColor="@color/text_primary" />
 
         <RadioButton
             android:id="@+id/rbFemale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:text="Nữ"
-            android:textColor="@color/black"
-            android:layout_marginStart="16dp" />
+            android:textColor="@color/text_primary" />
 
         <RadioButton
             android:id="@+id/rbOther"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:text="Khác"
-            android:textColor="@color/black"
-            android:layout_marginStart="16dp" />
+            android:textColor="@color/text_primary" />
     </RadioGroup>
 
-    <!-- Nút Lưu + Hủy (cùng hàng) -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginTop="24dp"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCancel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/button_primary"
             android:text="Hủy"
-            android:backgroundTint="@color/mau_button"
             android:textColor="@color/white"
-            app:cornerRadius="16dp"
-            android:layout_marginEnd="8dp" />
+            app:cornerRadius="16dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSaveChild"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/button_primary"
             android:text="Lưu thông tin"
-            android:backgroundTint="@color/mau_button"
             android:textColor="@color/white"
-            app:cornerRadius="16dp"
-            android:layout_marginStart="8dp" />
+            app:cornerRadius="16dp" />
     </LinearLayout>
 
 </LinearLayout>

@@ -7,7 +7,7 @@
     android:layout_margin="8dp"
     app:cardCornerRadius="16dp"
     app:cardElevation="6dp"
-    app:cardBackgroundColor="@android:color/white">
+    app:cardBackgroundColor="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,8 +40,8 @@
                 android:layout_height="wrap_content"
                 android:text="Nguyễn Bé Na"
                 android:textSize="19sp"
-            android:textStyle="bold"
-            android:textColor="@color/black" />
+                android:textStyle="bold"
+                android:textColor="@color/text_primary" />
 
             <TextView
                 android:id="@+id/tvChildGender"
@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:text="Giới tính: Nữ"
                 android:textSize="17sp"
-            android:textColor="@color/black" />
+                android:textColor="@color/text_primary" />
 
             <TextView
                 android:id="@+id/tvChildDOB"
@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:text="Ngày sinh: 20/02/2020"
                 android:textSize="17sp"
-            android:textColor="@color/black" />
+                android:textColor="@color/text_primary" />
 
             <TextView
                 android:id="@+id/tvCreatedAt"
@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:text="Thêm lúc: 01/06/2025"
                 android:textSize="15sp"
-            android:textColor="@color/black" />
+                android:textColor="@color/text_secondary" />
 
         </LinearLayout>
 

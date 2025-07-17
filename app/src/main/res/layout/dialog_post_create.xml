@@ -6,7 +6,7 @@
     android:layout_margin="16dp"
     app:cardCornerRadius="16dp"
     app:cardElevation="8dp"
-    android:backgroundTint="@android:color/white">
+    android:backgroundTint="@color/bg_dialog">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,9 +20,9 @@
             android:text="Tạo bài viết"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/text_primary"
             android:gravity="center"
-            android:layout_marginBottom="12dp"/>
+            android:layout_marginBottom="12dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,7 +37,7 @@
                 android:layout_height="48dp"
                 android:src="@drawable/taikhoan"
                 android:background="@drawable/bg_circle_blue"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/tvUserName"
@@ -46,14 +46,20 @@
                 android:text="Nguyễn Văn A"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_marginStart="12dp"/>
+                android:textColor="@color/text_primary"
+                android:layout_marginStart="12dp" />
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Bạn đang nghĩ gì?">
+            android:hint="Bạn đang nghĩ gì?"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtContent"
@@ -61,7 +67,9 @@
                 android:layout_height="120dp"
                 android:gravity="start|top"
                 android:inputType="textMultiLine"
-                android:maxLines="6"/>
+                android:maxLines="6"
+                android:textColor="@color/text_primary"
+                android:padding="12dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <ImageView
@@ -70,7 +78,7 @@
             android:layout_height="200dp"
             android:scaleType="centerCrop"
             android:layout_marginTop="12dp"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -84,19 +92,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Chọn ảnh"
-                android:textColor="@color/blue"
-                android:padding="8dp"/>
+                android:textColor="@color/primary"
+                android:padding="8dp" />
 
             <TextView
                 android:id="@+id/btnPost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Đăng bài"
-                android:textColor="@android:color/white"
+                android:textColor="@color/white"
                 android:background="@drawable/bg_circle_blue"
                 android:paddingHorizontal="20dp"
                 android:paddingVertical="8dp"
-                android:layout_marginStart="12dp"/>
+                android:layout_marginStart="12dp" />
         </LinearLayout>
 
     </LinearLayout>

@@ -1,8 +1,8 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F3E8FF"
+    android:background="@color/primary_light"
     android:fitsSystemWindows="true"
     android:gravity="center_horizontal"
     android:orientation="vertical"
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Tên:"
-            android:textColor="#7E57C2"
+            android:textColor="@color/primary_dark"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -39,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:text="Trịnh Văn Giang"
+            android:textColor="@color/text_primary"
             android:textSize="16sp" />
     </LinearLayout>
 
@@ -52,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Email:"
-            android:textColor="#7E57C2"
+            android:textColor="@color/primary_dark"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -62,6 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:text="giang@example.com"
+            android:textColor="@color/text_primary"
             android:textSize="16sp" />
     </LinearLayout>
 </LinearLayout>
