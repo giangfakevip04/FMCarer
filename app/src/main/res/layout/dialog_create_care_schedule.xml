@@ -1,9 +1,9 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8BBD0"
+    android:background="@color/bg_dialog"
     android:padding="5dp">
 
     <androidx.cardview.widget.CardView
@@ -11,25 +11,26 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="4dp"
         android:layout_marginVertical="12dp"
-        android:backgroundTint="@android:color/white"
-        android:padding="16dp"
-        android:cardCornerRadius="20dp"
-        android:cardElevation="6dp">
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="6dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:divider="@android:color/darker_gray"
+            android:divider="@color/divider"
             android:dividerPadding="8dp"
             android:orientation="vertical"
+            android:padding="16dp"
             android:showDividers="middle">
 
-
+            <!--            // Tiêu đề: Trẻ nhỏ-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:text="Chọn trẻ nhỏ"
+                android:textColor="@color/text_primary"
                 android:textStyle="bold" />
 
             <Spinner
@@ -38,12 +39,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp" />
 
-
+            <!--            // Loại nhắc nhở-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:text="Loại nhắc nhở"
+                android:textColor="@color/text_primary"
                 android:textStyle="bold" />
 
             <Spinner
@@ -51,92 +53,100 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-
+            <!--            // Nếu là loại tùy chỉnh-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layout_custom_type"
-                android:style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:hint="Loại nhắc nhở khác"
                 android:visibility="gone"
-                android:boxCornerRadiusBottomEnd="12dp"
-                android:boxCornerRadiusBottomStart="12dp"
-                android:boxCornerRadiusTopEnd="12dp"
-                android:boxCornerRadiusTopStart="12dp">
+                app:boxBackgroundColor="@color/white"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edt_custom_type"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_primary" />
             </com.google.android.material.textfield.TextInputLayout>
 
-
+            <!--            // Ghi chú-->
             <com.google.android.material.textfield.TextInputLayout
-                android:style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:hint="Ghi chú"
-                android:boxCornerRadiusBottomEnd="12dp"
-                android:boxCornerRadiusBottomStart="12dp"
-                android:boxCornerRadiusTopEnd="12dp"
-                android:boxCornerRadiusTopStart="12dp">
+                app:boxBackgroundColor="@color/white"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edt_note"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_primary" />
             </com.google.android.material.textfield.TextInputLayout>
 
-
+            <!--            // Ngày-->
             <com.google.android.material.textfield.TextInputLayout
-                android:style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:hint="Ngày nhắc"
-                android:boxCornerRadiusBottomEnd="12dp"
-                android:boxCornerRadiusBottomStart="12dp"
-                android:boxCornerRadiusTopEnd="12dp"
-                android:boxCornerRadiusTopStart="12dp">
+                app:boxBackgroundColor="@color/white"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edt_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:focusable="false"
-                    android:inputType="none" />
+                    android:inputType="none"
+                    android:textColor="@color/text_primary" />
             </com.google.android.material.textfield.TextInputLayout>
 
-
+            <!--            // Giờ-->
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:hint="Giờ nhắc"
-                android:boxCornerRadiusBottomEnd="12dp"
-                android:boxCornerRadiusBottomStart="12dp"
-                android:boxCornerRadiusTopEnd="12dp"
-                android:boxCornerRadiusTopStart="12dp">
+                app:boxBackgroundColor="@color/white"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edt_time"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:focusable="false"
-                    android:inputType="none" />
+                    android:inputType="none"
+                    android:textColor="@color/text_primary" />
             </com.google.android.material.textfield.TextInputLayout>
 
-
+            <!--            // Checkbox lặp lại-->
             <CheckBox
                 android:id="@+id/checkbox_repeat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Lặp lại" />
-
+                android:text="Lặp lại"
+                android:textColor="@color/text_primary" />
 
             <Spinner
                 android:id="@+id/spinner_repeat_type"
@@ -144,15 +154,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp" />
 
-
+            <!--            // Nút tạo nhắc nhở-->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_create_reminder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:backgroundTint="@color/mau_button"
+                android:backgroundTint="@color/button_primary"
                 android:text="Tạo nhắc nhở"
-                android:cornerRadius="24dp" />
+                android:textColor="@color/white"
+                app:cornerRadius="24dp" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </ScrollView>

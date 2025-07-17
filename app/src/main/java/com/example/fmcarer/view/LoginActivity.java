@@ -129,11 +129,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private void loginUser(String input, String password) {
         Call<UserResponse> call;
-
-        // Log the input (email or phone) and password before making the API call
-        Log.d(TAG, "loginUser: Input (Email/Phone): " + input);
-        Log.d(TAG, "loginUser: Password: " + password); // Be cautious about logging sensitive info in production
-
         if (Patterns.EMAIL_ADDRESS.matcher(input).matches()) {
             call = apiService.loginUser(new UserRequest(input, password));
         } else {
@@ -165,7 +160,6 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "✅ Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(LoginActivity.this, "Dữ liệu đăng nhập không hợp lệ!", Toast.LENGTH_SHORT).show();
-                        Log.e(TAG, "onResponse: User data or token is null/empty after successful response.");
                     }
                 } else {
                     handleLoginError(response);
@@ -182,8 +176,7 @@ public class LoginActivity extends AppCompatActivity {
 
     /**
      * Saves user data and authentication token to SharedPreferences.
-     *
-     * @param user  The UserData object containing user details.
+     * @param user The UserData object containing user details.
      * @param token The authentication token received from the server.
      */
     private void saveUserSession(UserResponse.UserData user, String token) {
@@ -203,10 +196,6 @@ public class LoginActivity extends AppCompatActivity {
             if (response.errorBody() != null) {
                 String errorBodyString = response.errorBody().string();
                 Log.e(TAG, "handleLoginError: Error Body: " + errorBodyString);
-                // Attempt to parse JSON error body for a specific message
-                // This assumes the errorBody is a JSON with a 'message' field
-                // You might need a Gson instance here if you want to parse it more robustly
-                // For simplicity, directly show the errorBodyString or try to extract 'message'
                 try {
                     JSONObject jObjError = new JSONObject(errorBodyString);
                     if (jObjError.has("message")) {
@@ -226,7 +215,6 @@ public class LoginActivity extends AppCompatActivity {
         }
         Toast.makeText(LoginActivity.this, errorMessage, Toast.LENGTH_LONG).show();
     }
-
     private void saveCredentials(String input, String password) {
         SharedPreferences.Editor editor = loginPrefs.edit();
         editor.putString("input_credential", input);

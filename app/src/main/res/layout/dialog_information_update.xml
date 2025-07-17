@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_main"
     android:padding="16dp"
     android:fillViewport="true">
 
@@ -12,81 +13,103 @@
         android:orientation="vertical"
         android:gravity="center_horizontal">
 
-        <!-- Ảnh đại diện -->
+<!--        // Ảnh đại diện-->
         <ImageView
             android:id="@+id/imgAvatar"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:src="@drawable/taikhoan"
-            android:scaleType="centerCrop"
             android:layout_marginTop="24dp"
             android:background="@drawable/bg_circle_blue"
-            android:padding="4dp" />
+            android:padding="4dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/taikhoan"
+            android:contentDescription="Ảnh đại diện" />
 
-        <!-- Nút chọn ảnh -->
+<!--        // Nút chọn ảnh-->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnChangeAvatar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chọn ảnh"
             android:layout_marginTop="8dp"
+            android:text="Chọn ảnh"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/button_secondary"
             app:cornerRadius="16dp" />
 
-        <!-- Họ tên -->
+<!--        // Họ tên-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:hint="Họ tên">
+            android:hint="Họ tên"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtFullname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColor="@color/text_primary" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Số điện thoại -->
+<!--        // Số điện thoại-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Số điện thoại">
+            android:hint="Số điện thoại"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="phone" />
+                android:inputType="phone"
+                android:textColor="@color/text_primary" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Nút cập nhật + quay lại trên 1 hàng -->
+<!--        // Nút cập nhật & quay lại-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginTop="24dp"
             android:gravity="center"
+            android:orientation="horizontal"
             android:weightSum="2">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnUpdate"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Cập nhật"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/button_primary"
                 app:cornerRadius="16dp"
-                android:layout_marginEnd="8dp"/>
+                android:layout_marginEnd="8dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnBack"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Quay lại"
-                style="@style/Widget.Material3.Button.OutlinedButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:textColor="@color/primary_dark"
+                android:strokeColor="@color/primary_dark"
+                android:strokeWidth="1"
                 app:cornerRadius="16dp"
-                android:layout_marginStart="8dp"/>
+                android:layout_marginStart="8dp" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

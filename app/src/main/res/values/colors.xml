@@ -1,35 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Màu chính -->
+
+    <!-- ===== Cơ bản ===== -->
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="gray">#BDBDBD</color>
-    <color name="red">#E53935</color>
+    <color name="gray_light">#EEEEEE</color>
+    <color name="divider">#CCCCCC</color>
+    <color name="error_red">#E53935</color>
 
-    <!-- Màu thương hiệu -->
-    <color name="purple_200">#B388FF</color>
-    <color name="purple_500">#6200EE</color>
-    <color name="purple_700">#3700B3</color>
+    <!-- ===== Văn bản ===== -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#777777</color>
+    <color name="text_strong">#000000</color>
 
-    <!-- Màu nhấn -->
-    <color name="blue">#1E88E5</color>
-    <color name="blue_dark">#1565C0</color>
+    <!-- ===== Trạng thái ===== -->
+    <color name="status_success">#4CAF50</color>
+    <color name="status_warning">#F44336</color>
 
-    <!-- Màu nền dialog -->
-    <color name="dialogBackground">#FFFFFF</color>
-    <color name="dialogBorder">#E0E0E0</color>
+    <!-- ===== Chủ đạo (Tím) ===== -->
+    <color name="primary">#722DD3</color>
+    <color name="primary_dark">#5E23B3</color>
+    <color name="primary_light">#EEE0FF</color>       <!-- nhẹ hơn primary -->
+    <color name="accent_purple">#B388FF</color>
 
-    <!-- Màu nút -->
+    <!-- ===== Phụ (Xanh pastel) ===== -->
+    <color name="secondary">#0097A7</color>           <!-- thay cho cyan_dark -->
+    <color name="secondary_light">#B2EBF2</color>     <!-- pastel cyan -->
 
+    <!-- ===== Nền giao diện ===== -->
+    <color name="bg_main">#B2EBF2</color>             <!-- dùng cho splash, dashboard -->
+    <color name="bg_fragment">#C2BAE3</color>
+    <color name="bg_dialog">#FFFFFF</color>
+    <color name="bg_item">#F4BCBC</color>
+    <color name="border_dialog">#E0E0E0</color>
 
-    <color name="light_hint">#777777</color>
-    <color name="mau_nen">#EEE0FF</color>
-    <color name="mau_button">#722DD3</color>
-    <color name="mau_fragment">#C2BAE3</color>
-    <color name="mau_item">#F4BCBC</color>
-    <color name="mau_edittext">#9056E2</color>
+    <!-- ===== Viền EditText ===== -->
+    <color name="edittext_border">#9056E2</color>
 
-    //
-
+    <!-- ===== Nút ===== -->
+    <color name="button_primary">#722DD3</color>
+    <color name="button_secondary">#0097A7</color>
 
 </resources>

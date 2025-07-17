@@ -12,18 +12,46 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!-- Tiêu đề Dialog -->
         <TextView
             android:id="@+id/tvDialogTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Thêm tài khoản thành viên"
+            android:text="Thêm Tài Khoản Phụ"
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="@color/text_primary"
             android:gravity="center_horizontal"
             android:layout_marginBottom="24dp" />
 
-        <!-- 🔤 Họ tên -->
+        <!-- Avatar và nút đổi ảnh -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:id="@+id/imgSubuserAvatar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/taikhoan"
+                android:scaleType="centerCrop"
+                android:background="@drawable/bg_circle_blue"
+                android:clipToOutline="true"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnChangeSubuserAvatar"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đổi ảnh"
+                android:textColor="@color/button_primary" />
+        </LinearLayout>
+
+        <!-- Họ tên -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,7 +75,7 @@
                 android:textColorHint="@color/text_hint" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- 📞 Số điện thoại -->
+        <!-- Số điện thoại -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,7 +99,7 @@
                 android:textColorHint="@color/text_hint" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- 🔐 Mật khẩu -->
+        <!-- Mật khẩu -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layoutSubPassword"
             android:layout_width="match_parent"
@@ -97,7 +125,7 @@
                 android:textColorHint="@color/text_hint" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- 🔒 Xác nhận Mật khẩu -->
+        <!-- Xác nhận mật khẩu -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layoutConfirmSubPassword"
             android:layout_width="match_parent"
@@ -156,7 +184,7 @@
                 android:text="Lưu"
                 android:textAllCaps="false"
                 android:textSize="16sp"
-                android:textColor="@android:color/white"
+                android:textColor="@color/white"
                 android:padding="14dp"
                 app:cornerRadius="16dp" />
         </LinearLayout>
