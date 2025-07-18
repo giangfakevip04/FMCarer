@@ -46,7 +46,7 @@ public class SignInActivity extends AppCompatActivity {
     private String currentOtpCode = "";
 
     private ApiService apiService;
-    private static final String TAG = "SIGNIN_ACTIVITY";
+    private static final String TAG = "SignIn_Activity";
     private static final String PREF_USER_SESSION = "user_session";
 
     @Override
@@ -174,7 +174,6 @@ public class SignInActivity extends AppCompatActivity {
                 edtOtp.setError("❌ Mã OTP không đúng");
             }
         });
-
         btnCancel.setOnClickListener(v -> dialog.dismiss());
         btnConfirm.setOnClickListener(v -> dialog.dismiss());
         txtResendOtp.setOnClickListener(v -> {

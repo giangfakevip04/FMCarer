@@ -12,10 +12,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
     // ✅ Đảm bảo đây là IP backend của bạn (chỉ giữ 1 dòng BASE_URL)
-    // private static final String BASE_URL = "http://192.168.1.9:6000/";
+//    private static final String BASE_URL = "http://192.168.1.10:5000/";
     // private static final String BASE_URL = "http://10.0.2.2:6000/";
-
-    private static final String BASE_URL = "http://10.24.58.30:5000/";
+    private static final String BASE_URL = "http://10.24.9.87:5000/";
     private static Retrofit retrofit;
     private static OkHttpClient okHttpClient; // Một instance duy nhất của OkHttpClient
 

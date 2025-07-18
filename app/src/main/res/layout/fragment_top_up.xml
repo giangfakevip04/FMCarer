@@ -4,25 +4,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_main"
-    android:padding="20dp"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="24dp">
 
-        <!-- 💵 Nhập số tiền -->
+        <!-- Tiêu đề -->
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nạp tiền vào tài khoản"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Nhập số tiền -->
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/amountInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            app:boxBackgroundMode="outline"
+            android:layout_marginBottom="32dp"
             app:boxCornerRadiusTopStart="16dp"
             app:boxCornerRadiusTopEnd="16dp"
             app:boxCornerRadiusBottomStart="16dp"
             app:boxCornerRadiusBottomEnd="16dp"
-            app:boxBackgroundColor="@color/bg_item"
+            app:boxBackgroundColor="@color/white"
             app:boxStrokeColor="@color/button_primary">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -31,55 +41,122 @@
                 android:layout_height="wrap_content"
                 android:hint="Nhập số tiền (VND)"
                 android:inputType="number"
+                android:maxLength="10"
+                android:textSize="18sp"
                 android:textColor="@color/text_primary"
                 android:textColorHint="@color/text_hint" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- 💳 Chọn phương thức thanh toán -->
-        <TextView
+        <!-- Label -->
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Phương thức thanh toán"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            android:text="Chọn phương thức thanh toán"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
             android:textColor="@color/text_primary"
-            android:layout_marginBottom="12dp" />
+            android:layout_marginBottom="16dp" />
 
+        <!-- RadioGroup -->
         <RadioGroup
             android:id="@+id/radioGroupPayment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <RadioButton
-                android:id="@+id/radioMomo"
-                android:layout_width="wrap_content"
+            <!-- Momo -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Momo"
-                android:textSize="14sp"
-                android:textColor="@color/text_primary" />
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white">
 
-            <RadioButton
-                android:id="@+id/radioVNPay"
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <RadioButton
+                        android:id="@+id/radioMomo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/button_primary"
+                        android:text="Momo"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/text_primary"
+                        android:textAppearance="?attr/textAppearanceBody1"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ZaloPay -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="VNPay"
-                android:textSize="14sp"
-                android:textColor="@color/text_primary" />
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <RadioButton
+                        android:id="@+id/radioZaloPay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/button_primary"
+                        android:text="ZaloPay"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/text_primary"
+                        android:textAppearance="?attr/textAppearanceBody1"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- VNPay -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <RadioButton
+                        android:id="@+id/radioVNPay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/button_primary"
+                        android:text="VNPay"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/text_primary"
+                        android:textAppearance="?attr/textAppearanceBody1"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
         </RadioGroup>
 
-        <!-- 🔘 Nút xác nhận -->
+        <!-- Nút thanh toán -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnTopUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Tiến hành thanh toán"
-            android:textAllCaps="false"
-            android:textSize="16sp"
+            android:textAppearance="?attr/textAppearanceButton"
+            android:layout_marginTop="40dp"
+            android:paddingVertical="16dp"
             android:textColor="@android:color/white"
-            android:layout_marginTop="32dp"
-            android:padding="14dp"
             android:backgroundTint="@color/button_primary"
-            app:cornerRadius="16dp" />
+            app:cornerRadius="12dp" />
+
     </LinearLayout>
 </ScrollView>

@@ -207,10 +207,13 @@ public class ProfileFragment extends Fragment implements ProfileAdapter.OnSubUse
             return;
         }
 
-        File file = new File(FileUtils.getPath(requireContext(), imageUri));
-        if (!file.exists()) {
-            Toast.makeText(requireContext(), "Không tìm thấy file ảnh", Toast.LENGTH_SHORT).show();
+        File file;
+        try {
+            file = FileUtils.createTempFileFromUri(requireContext(), imageUri); // Không dùng getPath nữa
+        } catch (IOException e) {
+            Toast.makeText(requireContext(), "Không thể truy cập ảnh. Hãy chọn ảnh khác hoặc cấp quyền.", Toast.LENGTH_SHORT).show();
             dialog.findViewById(R.id.btnUpdate).setEnabled(true);
+            Log.e(TAG, "Image file error: " + e.getMessage(), e);
             return;
         }
 
@@ -229,16 +232,7 @@ public class ProfileFragment extends Fragment implements ProfileAdapter.OnSubUse
                     String imageUrl = response.body().getImageUrl();
                     updateUserInfo(name, phone, imageUrl, dialog);
                 } else {
-                    String errorMsg = "Lỗi upload ảnh";
-                    if (response.errorBody() != null) {
-                        try {
-                            errorMsg += ": " + response.errorBody().string();
-                        } catch (IOException e) {
-                            Log.e(TAG, "Error parsing errorBody: " + e.getMessage());
-                        }
-                    }
-                    Toast.makeText(requireContext(), errorMsg, Toast.LENGTH_SHORT).show();
-                    Log.e(TAG, "Upload Image Error: " + response.code() + " " + response.message() + (response.errorBody() != null ? " - " + errorMsg : ""));
+                    Toast.makeText(requireContext(), "Lỗi upload ảnh", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -247,10 +241,10 @@ public class ProfileFragment extends Fragment implements ProfileAdapter.OnSubUse
                 MaterialButton btnUpdate = dialog.findViewById(R.id.btnUpdate);
                 if (btnUpdate != null) btnUpdate.setEnabled(true);
                 Toast.makeText(requireContext(), "Lỗi mạng khi upload ảnh: " + t.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.e(TAG, "Upload Image Network Failure: " + t.getMessage(), t);
             }
         });
     }
+
 
     private void updateUserInfo(String name, String phone, String imageUrl, Dialog dialog) {
         if (userId == null || userId.isEmpty()) {

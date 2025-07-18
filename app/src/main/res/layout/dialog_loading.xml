@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background"
+    android:elevation="4dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:indeterminateTint="?attr/colorPrimary" />
+
+    <TextView
+        android:id="@+id/loading_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đang xử lý..."
+        android:textAppearance="?attr/textAppearanceBody1"
+        android:textColor="?attr/colorOnSurface" />
+
+</LinearLayout>
